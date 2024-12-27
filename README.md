@@ -29,27 +29,31 @@
    \text{MAPE} = \frac{100}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| 
    ```
 
+# Project 1: Beginner Level on Dataset #1
+
 ## Machine Learning Models
-
-### Prophet
-
-### Linear Regression
-
-### Decision Trees
+### Prophet from Facebook (Meta)
+WIP
 
 ### Random Forest
+WIP
 
 ## Deep Learning Models
+WIP
 
 ### Recurrent Neural Networks (RNN)
-
-### Gated Recurrent Units (GRU)
+WIP
 
 ## Statistical Models
-
 ### Seasonal Auto-Regressive Integrated Moving Average (SARIMA) 
+WIP
 
-### Exponential Smoothing (Holt-Winters)
+# Project 2: Intermediate Level on Dataset #2
+## Machine Learning Models
+WIP
 
-### Fourier Transform
+## Deep Learning Models
+WIP
 
+## Statistical Models
+WIP
