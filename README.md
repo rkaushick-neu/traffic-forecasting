@@ -33,39 +33,9 @@
 
 ## Machine Learning Model Results
 ### Prophet from Facebook (Meta)
-Comparing Prophet Models:
-<table>
-    <tr>
-        <th>Model</th>
-        <th>MAE</th>
-        <th>RMSE</th>
-        <th>MAPE</th>
-        <th>R-squared</th>
-    </tr>
-    <tr>
-        <td>Prophet Model 1 (Baseline)</td>
-        <td >1745.596</td>
-        <td style="color: red;">2349.592</td>
-        <td style="color: green;">16.84 %</td>
-        <td style="color: red;">0.295</td>
-    </tr>
-    <tr>
-        <td style="color: green;">Prophet Hyperparameter Tuned (GridSearchCV)</td>
-        <td style="color: green;">1718.466</td>
-        <td style="color: green;">2284.065</td>
-        <td>17.03 %</td>
-        <td style="color: green;">0.334</td>
-    </tr>
-    <tr>
-        <td >Prophet Hyperparameter Tuned (Bayesian Optimization)</td>
-        <td style="color: red;">1768.046</td>
-        <td>2334.266</td>
-        <td style="color: red;">17.35 %</td>
-        <td>0.304</td>
-    </tr>
-</table>
+**Comparing Prophet Models:**
 
-<small>Note: Hyper-parameters were optimized for RMSE</small>
+![Prophet Model Comparison Table](./images/Prophet_Model_Comparisons.png)
 
 It was surprising to see that the Bayesian Optimization led to results which were just barely better than the baseline model in terms of the RMSE score & R-squared, and worse in terms of MAE & MAPE. 
 
