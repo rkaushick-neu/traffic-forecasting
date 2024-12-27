@@ -77,6 +77,24 @@ We can see that the second model (in this case with GridSearchCV) was the overal
    - highest R-squared
 2. The higher R-squared indicates it captures more of the underlying patterns in the data.
 
+#### Visualizing Prophet Model
+**Graphs showing the Overall, Weekly & Yearly Trend**
+
+![3 Graph of the Prophet model](./images/prophet_trend_components.png)
+
+From the above 3 graphs we can see the following:
+   1. Exponential growth from 2012 to 2014 on the number of cars on the street.
+   2. Relatively lower amount of cars on the weekends and much more cars on weekdays. This suggests that the area where the data was collected was likely commercial neighborhood.
+   3. Between months March & May there was a dip in the number of cars on the street. This coincides with vacations in summer for many employees. The highest cars are present between the months of September to November. After november we can see another dip until January - which coincides with the Winter breaks and vacations
+
+**Graph showing Actual vs Predicted Values**
+
+![Actual vs Predicted Graph](./images/prophet_actual_vs_predicted.png)
+
+**Visualizing How the Best Prophet Model Fits the Data**
+
+![Graph of Prophet model along with data points](./images/prophet_best_mode_fit_data.png)
+
 ### Random Forest
 WIP
 
