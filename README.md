@@ -31,9 +31,51 @@
 
 # Project 1: Beginner Level on Dataset #1
 
-## Machine Learning Models
+## Machine Learning Model Results
 ### Prophet from Facebook (Meta)
-WIP
+Comparing Prophet Models:
+<table>
+    <tr>
+        <th>Model</th>
+        <th>MAE</th>
+        <th>RMSE</th>
+        <th>MAPE</th>
+        <th>R-squared</th>
+    </tr>
+    <tr>
+        <td>Prophet Model 1 (Baseline)</td>
+        <td >1745.596</td>
+        <td style="color: red;">2349.592</td>
+        <td style="color: green;">16.84 %</td>
+        <td style="color: red;">0.295</td>
+    </tr>
+    <tr>
+        <td style="color: green;">Prophet Hyperparameter Tuned (GridSearchCV)</td>
+        <td style="color: green;">1718.466</td>
+        <td style="color: green;">2284.065</td>
+        <td>17.03 %</td>
+        <td style="color: green;">0.334</td>
+    </tr>
+    <tr>
+        <td >Prophet Hyperparameter Tuned (Bayesian Optimization)</td>
+        <td style="color: red;">1768.046</td>
+        <td>2334.266</td>
+        <td style="color: red;">17.35 %</td>
+        <td>0.304</td>
+    </tr>
+</table>
+
+<small>Note: Hyper-parameters were optimized for RMSE</small>
+
+It was surprising to see that the Bayesian Optimization led to results which were just barely better than the baseline model in terms of the RMSE score & R-squared, and worse in terms of MAE & MAPE. 
+
+We can see that the second model (in this case with GridSearchCV) was the overall best performing model because of the following reasons:
+1. It has the best performance on 3 out of 4 metrics:
+   - lowest MAE, 
+   - lowest RMSE  
+   - only slightly worse MAPE compared to Model 1.
+   - highest R-squared
+2. The higher R-squared indicates it captures more of the underlying patterns in the data.
 
 ### Random Forest
 WIP
