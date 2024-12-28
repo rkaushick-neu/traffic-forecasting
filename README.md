@@ -56,6 +56,22 @@ We can see that the traffic volume changes quite a lot during each day. This mak
 
 ## Machine Learning Model Results
 ### Prophet from Facebook (Meta)
+
+**Reasons for Choosing Prophet Model**
+1. Handles Seasonality Well: Traffic typically has multiple seasonal patterns (daily, weekly, and yearly).
+2. Robust to Missing Data: Prophet handles missing data gracefully without requiring explicit imputation.
+3. Handles Outliers: Traffic data can have outliers due to accidents, special events, or holidays.
+4. Fast and Scalable: Prophet is computationally efficient and can handle large datasets common in traffic monitoring
+5. Built-in Uncertainty Estimates: Provides confidence intervals for forecasts.
+
+
+**Recognizing Downsides of Prophet Model**
+- Limited External Variables: Not as flexible as other models for incorporating multiple external features
+- Fixed Model Structure: Less flexible than deep learning models for capturing complex patterns
+- Over-fitting Risk
+- Limited Control: Less control over the underlying model compared to traditional statistical methods and some parameters are automatically set and can't be easily modified
+
+
 **Comparing Prophet Models:**
 
 ![Prophet Model Comparison Table](./images/Prophet_Model_Comparisons.png)
@@ -88,14 +104,21 @@ From the above 3 graphs we can see the following:
 
 ![Graph of Prophet model along with data points](./images/prophet_best_mode_fit_data.png)
 
-### Random Forest
-WIP
-
 ## Deep Learning Models
-WIP
+### Long Term Short Term Memory (LSTM)
+**Reasons for Choosing LSTMs:**
+1. Memory of Historical Patterns: LSTMs have a "memory cell" that can remember long-term dependencies.
+2. Handles Multiple Seasonality: Traffic data shows daily, weekly and seasonal patterns. For example the data shows daily rush hours, weekend vs weekday differences and seasonal variations. LSTMs can capture these complex temporal patterns and handle long-term dependencies better than simple RNN models.
+3. Variable Input Lengths: Useful when dealing with irregular sampling or missing data and it is flexible for different prediction horizons.
+4. RNNs at times suffer from the **vanishing gradient problem** which can be minimized by using LSTMs. 
 
-### Recurrent Neural Networks (RNN)
-WIP
+**Recognizing Downsides of LSTMs**
+
+- Computational Resources: LSTMs are more computationally intensive.
+- Many Hyperparameter to Tune (layers, units, dropout rate, etc.)
+- Black Box Nature: Limited interpretability of predictions.
+- Over-fitting Risk
+
 
 ## Statistical Models
 ### Seasonal Auto-Regressive Integrated Moving Average (SARIMA) 
@@ -113,5 +136,8 @@ WIP
 
 
 # References
-https://www.youtube.com/watch?v=6GX5SO_V46c&list=LL&index=5&t=1532s&ab_channel=HackersRealm
-https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/
+- https://www.youtube.com/watch?v=6GX5SO_V46c&list=LL&index=5&t=1532s&ab_channel=HackersRealm
+- https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/
+- https://machinelearningmastery.com/how-to-improve-neural-network-stability-and-modeling-performance-with-data-scaling/
+- 
+_(WIP - convert the references to MLA/ APA format)_
