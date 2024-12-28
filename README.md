@@ -29,7 +29,30 @@
    \text{MAPE} = \frac{100}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| 
    ```
 
-# Project 1: Beginner Level on Dataset #1
+# Project 1: Beginner Level
+## The Dataset #1
+
+```mermaid
+erDiagram
+    TrafficTimeSeriesData{
+        id int
+        Datetime Date
+        Count int
+    }
+```
+This dataset includes the following columns:
+1. **ID:** Primary key of the dataset (not required for the project)
+2. **Datetime:** Includes the date and time taken at an interval of every hour.
+3. **Count:** The number of cars at the particular date & time.  
+
+There are a total of **18,288 rows** of data.
+
+### Assumptions
+We do not have much information about the dataset - like how or where the data was collected. Therefore we can assume that this is the data of the number of cars on the street at one particular road intersection over time.
+
+## Exploratory Data Analysis
+![Graph visualizing the data](./images/dataset1_eda.png)
+We can see that the traffic volume changes quite a lot during each day. This makes sense as there could be more traffic in the rush hour of the mornings and evenings while being relatively much lower during off-peak times.
 
 ## Machine Learning Model Results
 ### Prophet from Facebook (Meta)
@@ -87,3 +110,8 @@ WIP
 
 ## Statistical Models
 WIP
+
+
+# References
+https://www.youtube.com/watch?v=6GX5SO_V46c&list=LL&index=5&t=1532s&ab_channel=HackersRealm
+https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/
