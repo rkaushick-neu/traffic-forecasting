@@ -124,10 +124,39 @@ The above graph shows the scatter plot of actual data points and shows the Proph
 - Black Box Nature: Limited interpretability of predictions.
 - Over-fitting Risk
 
+**Comparing LSTM models**
+
+![LSTM Models Comparison Table](./images/LSTM_Model_Comparisons.png)
+
+From the above table, we can see that the 3rd Grid Search Tuned LSTM model has outperformed our initial baseline model on all of the metrics.
+
+The 2nd Grid Search Tuned LSTM model was quite bad perhaps due to the following reasons:
+ - It explored a suboptimal parameter space
+ - I had issues with local minima during training
+
+**Visualizing How the Best LSTM Model Fits The Data**
+
+![](./images/lstm_last_7_days_forecast.png)
+
+The above graph shows the scatter plot of actual data points and shows the LSTM model's predictions for the last 7 days (in the test set).
 
 ## Statistical Models
 ### Seasonal Auto-Regressive Integrated Moving Average (SARIMA) 
 WIP
+
+## Learnings
+
+1. Sometimes hyper-parameter tuning with Grid Search may result in a worse model than the baseline. This can be due to the following reasons:
+   - Explored a suboptimal parameter space.
+   - Had issues with local minima during training.
+2. The LSTM model had data scaled from 0 to 1. After the predictions, initially I missed scaling it back to the original value which gave incorrect MAE, MSE, RMSE and R-Squared values.
+3. The LSTM model was trained to predict the data per hour. In the prophet model I had initially trained the data to predict the traffic per day. Therefore, the graphs didn't match. Once I converted the LSTM graph to show the number of cars per day, both the Prophet model graph and the LSTM model graphs can be compared:
+
+![Prophet model Actual vs Predicted Graph](./images/prophet_actual_vs_predicted.png)
+
+![LSTM model Actual vs Predicted Graph](./images/lstm_actual_vs_predicted.png)
+
+On further thought, predicting traffic per hour is much more useful from a business perspective as compared to predicting the total traffic per day.
 
 # Project 2: Intermediate Level on Dataset #2
 ## Machine Learning Models
