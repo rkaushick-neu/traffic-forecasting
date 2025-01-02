@@ -52,6 +52,7 @@ We do not have much information about the dataset - like how or where the data w
 
 ## Exploratory Data Analysis
 ![Graph visualizing the data](./images/dataset1_eda.png)
+
 We can see that the traffic volume changes quite a lot during each day. This makes sense as there could be more traffic in the rush hour of the mornings and evenings while being relatively much lower during off-peak times.
 
 ## Machine Learning Model Results
@@ -100,9 +101,13 @@ From the above 3 graphs we can see the following:
 
 ![Actual vs Predicted Graph](./images/prophet_actual_vs_predicted.png)
 
+We can see the actual data points plotted in green and the Prophet model's predictions shown in red. The Prophet model also returns the upper and lower bound confidence interval which is represented by the light red shading. This visualization helps compare the model's forecasting performance against the ground truth values.
+
 **Visualizing How the Best Prophet Model Fits the Data**
 
 ![Graph of Prophet model along with data points](./images/prophet_best_mode_fit_data.png)
+
+The above graph shows the scatter plot of actual data points and shows the Prophet model's predictions for the entire data set (train & test) ranging from 2012 to 2014.
 
 ## Deep Learning Models
 ### Long Term Short Term Memory (LSTM)
