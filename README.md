@@ -65,8 +65,8 @@ We do not have much information about the dataset - like how or where the data w
 
 From the above graphs, we can see that:
 1. It is not **stationary** i.e.:
-   - The mean, µ, is not constant
-   - The variance, σ, is not constant
+   - From Graph 1, the mean, µ, is not constant
+   - From Graph 1, the variance, σ, is not constant
    - There is **seasonality**:
      - From Graph 2, we can see some **weekly seasonality** - Mon to Fri the peaks are usually a bit higher and the peaks on Sat & Sun are lower each week.
      - From Graph 3, we can also see some **daily seasonality** - there are high peaks, perhaps during rush hour, and low peaks, perhaps during off-peak times each day.
