@@ -35,14 +35,14 @@
 ```mermaid
 erDiagram
     TrafficTimeSeriesData{
-        id int
+        ID int
         Datetime Date
         Count int
     }
 ```
 This dataset includes the following columns:
 1. **ID:** Primary key of the dataset (not required for the project)
-2. **Datetime:** Includes the date and time taken at an interval of every hour.
+2. **Datetime:** Includes the date and time taken at an **interval of every hour**.
 3. **Count:** The number of cars at the particular date & time.  
 
 There are a total of **18,288 rows** of data.
@@ -51,9 +51,25 @@ There are a total of **18,288 rows** of data.
 We do not have much information about the dataset - like how or where the data was collected. Therefore we can assume that this is the data of the number of cars on the street at one particular road intersection over time.
 
 ## Exploratory Data Analysis
-![Graph visualizing the data](./images/dataset1_eda.png)
+![Graph visualizing traffic over time](./images/dataset1_eda_alltime.png)
 
-We can see that the traffic volume changes quite a lot during each day. This makes sense as there could be more traffic in the rush hour of the mornings and evenings while being relatively much lower during off-peak times.
+<small>Graph 1: Graph visualizing traffic over time for the entire dataset.</small>
+
+![Zoomed in graph visualizing the weekly traffic for September 2014](./images/dataset1_eda_weekly.png)
+
+<small>Graph 2: Zoomed in visual of the weekly traffic in September 2014.</small>
+
+![Zoomed in graph visualizing the daily traffic for 1st Week of September 2014](./images/dataset1_eda_daily.png)
+
+<small>Graph 3: Zoomed in visual of the daily traffic for 1st Week of September 2014.</small>
+
+From the above graphs, we can see that:
+1. It is not **stationary** i.e.:
+   - The mean, µ, is not constant
+   - The variance, σ, is not constant
+   - There is **seasonality**:
+     - From Graph 2, we can see some **weekly seasonality** - Mon to Fri the peaks are usually a bit higher and the peaks on Sat & Sun are lower each week.
+     - From Graph 3, we can also see some **daily seasonality** - there are high peaks, perhaps during rush hour, and low peaks, perhaps during off-peak times each day.
 
 ## Machine Learning Model Results
 ### Prophet from Facebook (Meta)
@@ -142,7 +158,28 @@ The above graph shows the scatter plot of actual data points and shows the LSTM 
 
 ## Statistical Models
 ### Seasonal Auto-Regressive Integrated Moving Average (SARIMA) 
-WIP
+
+**Notation**
+
+```
+   ARIMA (p, d, q)1 (P, D, Q)m
+```
+where:
+- p: 
+- d: 
+- q: 
+- P: 
+- D: 
+- Q: 
+- m: seasonal factor - number of periods within a year for the seasonality to repeat
+
+**Reasons for Choosing SARIMA**
+
+...
+
+**Recognizing the Downsides of SARIMA**
+
+...
 
 ## Learnings
 
@@ -170,6 +207,7 @@ WIP
 
 
 # References
+- https://www.youtube.com/watch?v=WjeGUs6mzXg&list=PLvcbYUQ5t0UHOLnBzl46_Q6QKtFgfMGc3&index=22&ab_channel=ritvikmath
 - https://www.youtube.com/watch?v=6GX5SO_V46c&list=LL&index=5&t=1532s&ab_channel=HackersRealm
 - https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/
 - https://machinelearningmastery.com/how-to-improve-neural-network-stability-and-modeling-performance-with-data-scaling/
