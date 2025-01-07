@@ -1,12 +1,15 @@
 # Traffic Forecasting
 
-## Datasets
-1. [Traffic_data](data/TrafficDataTimeSeriesAnalysis.csv)
-2. [Traffic Prediction Dataset (Kaggle)](https://www.kaggle.com/datasets/fedesoriano/traffic-prediction-dataset)
+Aim: To build a robust forecasting solution that can fairly accurately predict future traffic 
+
+## Projects
+1. [Project 1: Generic Traffic Forecasting (At 1 Road Intersection)](./README.md#project-1-generic-traffic-forecasting-at-1-road-intersection)
+2. [Project 2: Traffic Forecasting (For 4 Road Intersections)](./README.md#project-2-traffic-forecasting-for-4-road-intersections)
+3. Project 3: Traffic Forecast for City of Toronto (soon)
 
 ## Jupyter Notebooks
-1. [traffic_forecast_1.ipynb](./traffic_forecast_nb1.ipynb): Built for the Dataset #1
-2. traffic_forecast_2.ipynb: Built for the Dataset #2
+1. [traffic_forecast_1.ipynb](./traffic_forecast_nb1.ipynb): Built for the Project #1
+2. traffic_forecast_2.ipynb: Built for the Project #2
 
 ## Metrics to Evaluate Models
 1. **Mean Absolute Error (MAE)**
@@ -29,7 +32,7 @@
    \text{MAPE} = \frac{100}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| 
    ```
 
-# Project 1: Beginner Level
+# Project 1: Generic Traffic Forecasting (At 1 Road Intersection)
 ## The Dataset #1
 
 ```mermaid
@@ -51,25 +54,41 @@ There are a total of **18,288 rows** of data.
 We do not have much information about the dataset - like how or where the data was collected. Therefore we can assume that this is the data of the number of cars on the street at one particular road intersection over time.
 
 ## Exploratory Data Analysis
+
+Graph 1: Graph visualizing traffic over time for the entire dataset.
+
 ![Graph visualizing traffic over time](./images/dataset1_eda_alltime.png)
 
-<small>Graph 1: Graph visualizing traffic over time for the entire dataset.</small>
+Graph 2: Zoomed in visual of the monthly traffic in 2014.
+
+![Zoomed in graph visualizing the monthly traffic for 2014](./images/dataset1_eda_monthly_2014.png)
+
+Graph 3: Zoomed in visual of the weekly traffic in August 2014.
 
 ![Zoomed in graph visualizing the weekly traffic for September 2014](./images/dataset1_eda_weekly.png)
 
-<small>Graph 2: Zoomed in visual of the weekly traffic in September 2014.</small>
+Graph 4: Zoomed in visual of the daily traffic for 1st Week of August 2014.
 
 ![Zoomed in graph visualizing the daily traffic for 1st Week of September 2014](./images/dataset1_eda_daily.png)
 
-<small>Graph 3: Zoomed in visual of the daily traffic for 1st Week of September 2014.</small>
 
 From the above graphs, we can see that:
-1. It is not **stationary** i.e.:
-   - From Graph 1, the mean, µ, is not constant
-   - From Graph 1, the variance, σ, is not constant
+1. The dataset is **not stationary** i.e.:
+   - From Graph 1 & 2, the mean, µ, is not constant across the entire graph - it looks like the mean is increasing.
+   - From Graph 1 & 2, the variance, σ, is not constant across the entire graph - it looks like the variance is gradually increasing.
    - There is **seasonality**:
-     - From Graph 2, we can see some **weekly seasonality** - Mon to Fri the peaks are usually a bit higher and the peaks on Sat & Sun are lower each week.
-     - From Graph 3, we can also see some **daily seasonality** - there are high peaks, perhaps during rush hour, and low peaks, perhaps during off-peak times each day.
+     - From Graph 3, we can see some **weekly seasonality** - Mon to Fri the peaks are usually a bit higher and the peaks on Sat & Sun are lower each week.
+     - From Graph 4, we can also see some **daily seasonality** - there are high peaks, perhaps during rush hour, and low peaks, perhaps during off-peak times each day.
+
+If we want to check whether this dataset exhibits stationarity apart from just looking at the graph, we can also use the **Augmented Dickey-Fuller (ADF)** statistical test.
+
+## Which Models Not to Try
+Since the dataset exhibits non-stationarity we **can't use the following models** (or more so, we shouldn't directly try these models):
+- **Linear Regression**: As they assume linear relationship between variable(s).
+- **Auto-Regressive/ Moving-Average/ ARMA/ ARIMA/ SARIMA** models: when there is non-stationarity, these models may not capture underlying trends leading to incorrect forecasts.
+- **K-Nearest Neighbor (KNN) Regression**: if a datasets is non-stationary, the similarity between data points may not be meaningful, leading to poor forecasts.
+
+However, we can try to transform the data to be stationary and then use any of these models. In this project, for a fair comparison between models, I have not performed much 
 
 ## Machine Learning Model Results
 ### Prophet from Facebook (Meta)
@@ -195,7 +214,7 @@ where:
 
 On further thought, predicting traffic per hour is much more useful from a business perspective as compared to predicting the total traffic per day.
 
-# Project 2: Intermediate Level on Dataset #2
+# Project 2: Traffic Forecasting (For 4 Road Intersections)
 ## Machine Learning Models
 WIP
 
@@ -207,7 +226,7 @@ WIP
 
 
 # References
-- https://www.youtube.com/watch?v=WjeGUs6mzXg&list=PLvcbYUQ5t0UHOLnBzl46_Q6QKtFgfMGc3&index=22&ab_channel=ritvikmath
+- Time Series Playlist by ritvikmath: https://www.youtube.com/playlist?list=PLvcbYUQ5t0UHOLnBzl46_Q6QKtFgfMGc3
 - https://www.youtube.com/watch?v=6GX5SO_V46c&list=LL&index=5&t=1532s&ab_channel=HackersRealm
 - https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/
 - https://machinelearningmastery.com/how-to-improve-neural-network-stability-and-modeling-performance-with-data-scaling/
