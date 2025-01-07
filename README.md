@@ -88,7 +88,7 @@ Since the dataset exhibits non-stationarity we **can't use the following models*
 - **Auto-Regressive/ Moving-Average/ ARMA/ ARIMA/ SARIMA** models: when there is non-stationarity, these models may not capture underlying trends leading to incorrect forecasts.
 - **K-Nearest Neighbor (KNN) Regression**: if a datasets is non-stationary, the similarity between data points may not be meaningful, leading to poor forecasts.
 
-However, we can try to transform the data to be stationary and then use any of these models. In this project, for a fair comparison between models, I have not performed much 
+However, we can try to transform the data to be stationary and then use any of these models. 
 
 ## Machine Learning Model Results
 ### Prophet from Facebook (Meta)
