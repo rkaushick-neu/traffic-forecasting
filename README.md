@@ -1,15 +1,16 @@
 # Traffic Forecasting
 
-Aim: To build a robust forecasting solution that can fairly accurately predict future traffic 
+Aim: To build a robust forecasting solution that can fairly accurately predict future traffic condition on major intersections.
 
 ## Projects
 1. [Project 1: Generic Traffic Forecasting (At 1 Road Intersection)](./README.md#project-1-generic-traffic-forecasting-at-1-road-intersection)
-2. [Project 2: Traffic Forecasting (For 4 Road Intersections)](./README.md#project-2-traffic-forecasting-for-4-road-intersections)
-3. Project 3: Traffic Forecast for City of Toronto (soon)
+<!-- 2. Project 2: Traffic Forecasting (At 4 Road Intersections): Coming soon
+3. Project 3: Traffic Forecast for City of Toronto (At Major Intersections): Coming soon -->
 
 ## Jupyter Notebooks
-1. [traffic_forecast_1.ipynb](./traffic_forecast_nb1.ipynb): Built for the Project #1
-2. traffic_forecast_2.ipynb: Built for the Project #2
+1. [traffic_forecast_1.ipynb](./traffic_forecast_nb1.ipynb)
+<!-- 2. traffic_forecast_2.ipynb (coming soon): Built for the Project #2
+1. traffic_forecast_3.ipynb (coming soon): Built for the Project #3 -->
 
 ## Metrics to Evaluate Models
 1. **Mean Absolute Error (MAE)**
@@ -175,7 +176,7 @@ The 2nd Grid Search Tuned LSTM model was quite bad perhaps due to the following 
 
 The above graph shows the scatter plot of actual data points and shows the LSTM model's predictions for the last 7 days (in the test set).
 
-## Statistical Models
+<!-- ## Statistical Models
 ### Seasonal Auto-Regressive Integrated Moving Average (SARIMA) 
 
 **Notation**
@@ -198,7 +199,7 @@ where:
 
 **Recognizing the Downsides of SARIMA**
 
-...
+... -->
 
 ## Learnings
 
@@ -212,9 +213,9 @@ where:
 
 ![LSTM model Actual vs Predicted Graph](./images/lstm_actual_vs_predicted.png)
 
-On further thought, predicting traffic per hour is much more useful from a business perspective as compared to predicting the total traffic per day.
+On further thought, predicting traffic per hour is more useful from a business perspective as compared to predicting the total traffic per day.
 
-# Project 2: Traffic Forecasting (For 4 Road Intersections)
+<!-- # Project 2: Traffic Forecasting (For 4 Road Intersections)
 ## Machine Learning Models
 WIP
 
@@ -222,7 +223,7 @@ WIP
 WIP
 
 ## Statistical Models
-WIP
+WIP -->
 
 
 # References
@@ -230,5 +231,4 @@ WIP
 - https://www.youtube.com/watch?v=6GX5SO_V46c&list=LL&index=5&t=1532s&ab_channel=HackersRealm
 - https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/
 - https://machinelearningmastery.com/how-to-improve-neural-network-stability-and-modeling-performance-with-data-scaling/
-- 
-_(WIP - convert the references to MLA/ APA format)_
+<!-- _(WIP - convert the references to MLA/ APA format)_ -->
